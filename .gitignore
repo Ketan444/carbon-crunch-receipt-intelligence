@@ -1,0 +1,39 @@
+# .gitignore for Carbon Crunch Receipt Intelligence
+
+# Dependencies
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Output files (generated during processing)
+outputs/
+*.json (generated outputs - tracked only if pre-existing)
+expense_summary.json
+evaluation_report.json
+
+# Cache
+.cache/
+
+# Environment variables
+.env
+
+# Jupyter notebooks (if any)
+.notebooks/
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large files or binary data
+*.zip
+
+# OCR model caches
+.paddleocr/

@@ -1,0 +1,66 @@
+"""
+PinNED dependencies for Carbon Crunch Receipt Intelligence.
+
+Every dependency has a real purpose - no unnecessary packages.
+
+Core:
+- opencv-python          - image processing (resize, grayscale, CLAHE, etc.)
+- pillow                 - image I/O and format support
+- numpy                  - array operations for preprocessing
+- paddleocr              - primary OCR engine
+- pydantic               - data models and validation
+- pytest                 - testing framework
+- pyarrow                - efficient JSON/hdf5 if needed
+
+Config:
+- pyyaml                 - configuration files
+
+Code quality:
+- ruff                   - linting and formatting
+- black                  - code formatter (optional)
+
+CLI:
+- typer                  - modern CLI (optional, argparse used in scripts)
+"""
+
+# Core dependencies
+core_dependencies = [
+    "opencv-python-headless>=4.5.0",
+    "pillow>=9.0.0",
+    "numpy>=1.24.0",
+    "paddleocr>=2.0.0",
+    "pydantic>=2.0.0",
+    "pytest>=7.0.0",
+]
+
+# Config dependencies
+config_dependencies = [
+    "pyyaml>=6.0.0",
+]
+
+# Code quality (optional)
+quality_dependencies = [
+    "ruff>=0.1.0",
+    "black>=23.0.0",
+]
+
+# All installable dependencies
+all_dependencies = core_dependencies + config_dependencies
+
+# Development/extras
+extras = {
+    "quality": quality_dependencies,
+    "dev": quality_dependencies + ["pytest"],
+}
+
+# Print install instructions
+if __name__ == "__main__":
+    print("Core dependencies:")
+    for dep in core_dependencies:
+        print(f"  pip install {dep}")
+    print("\nConfig dependencies:")
+    for dep in config_dependencies:
+        print(f"  pip install {dep}")
+    print("\nOptional quality:")
+    for dep in quality_dependencies:
+        print(f"  pip install {dep}")
